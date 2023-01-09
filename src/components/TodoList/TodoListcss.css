@@ -1,0 +1,21 @@
+.TodoList{
+    padding: 48px 24px 38px 48px;
+}
+
+
+.TodoList-newTask{
+    display: flex;
+    justify-content: space-between;
+}
+
+.todoSections{
+    display: flex;
+}
+
+.todoSections-TaskName, 
+.todoSections-Deadline,
+.todoSections-Status,
+.todoSections-Assigne{
+    flex-grow: 1;
+    color: gray;
+}

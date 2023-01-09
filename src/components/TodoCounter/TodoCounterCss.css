@@ -1,0 +1,11 @@
+.TodoCounter{
+    background-color: blueviolet;
+    width: 94%;
+    border: blueviolet solid 8px;
+    border-radius: 10px;
+    margin-bottom: 22px;
+}
+
+.TodoCounter-user-name{
+    display: flex;
+}

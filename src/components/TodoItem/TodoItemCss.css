@@ -1,0 +1,11 @@
+.item{
+    display: flex;
+}
+
+.item-seccion{
+    flex-grow: 1;
+}
+
+.item-seccion-deadLine{
+    
+}
