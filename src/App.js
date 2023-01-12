@@ -3,6 +3,7 @@ import {TodoSearch} from './components/TodoSearch'
 import {TodoList} from './components/TodoList'
 import {TodoItem} from './components/TodoItem'
 import { NavigationBar } from './components/NavigationBar'
+import {useLocalStorage} from './components/customHooks/useLocalStorage'
 import './App.css';
 import React, {useEffect, useState } from 'react'
 
@@ -18,15 +19,14 @@ function App() {
   const [deleteTodo, setDeleteTodo] = useState(false)
   let searchedTodos=[]
 
+
+  const SearchLocalStorage = () => {
+    useLocalStorage('TODOS_V1',todos,setTodos,deleteTodo)
+  }
+  useEffect(()=>{
+    SearchLocalStorage()
+  },[])
   
-  const addNewUser = () =>{
-    fetch("https://randomuser.me/api/")
-        .then(res => res.json())
-        .then(info => {
-          const newUser = {id: todos.length+1,taskName: 'Marketing coordinator', deadLine: '12 Dec 2020', status: "Active", assignee: info.results[0].picture.thumbnail, completed: false}
-        setTodos([...todos,newUser])
-      })
-  };
 
 
   if (todoSearch.length <1){
@@ -39,9 +39,7 @@ function App() {
     })
   }
   
-  if (todos.length<10 && !deleteTodo){
-    addNewUser()
-  };
+ 
   
   if (user ==""){
     fetch("https://randomuser.me/api/")
