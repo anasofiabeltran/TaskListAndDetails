@@ -2,10 +2,28 @@
     display: flex;
 }
 
+.item >div{
+    display: flex;
+    gap: 2px;
+    flex-grow: 3;
+}
+
+.taskDone{
+    text-decoration: line-through;
+}
+
 .item-seccion{
     flex-grow: 1;
 }
 
 .item-seccion-deadLine{
     
+}
+
+.item button img{
+    width: 20px;
+}
+
+.item-seccion button img{
+    width: 20px;
 }

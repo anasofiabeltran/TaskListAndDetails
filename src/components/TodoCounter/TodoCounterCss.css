@@ -9,3 +9,13 @@
 .TodoCounter-user-name{
     display: flex;
 }
+
+.TodoCounter-user{
+    display: flex;
+    gap: 2px;
+    color: white;
+}
+
+.TodoCounter-user img{
+    border-radius: 100%;
+}

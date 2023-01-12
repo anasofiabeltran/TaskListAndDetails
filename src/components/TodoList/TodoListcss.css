@@ -12,7 +12,10 @@
     display: flex;
 }
 
-.todoSections-TaskName, 
+.todoSections-TaskName{
+    flex-grow: 4;
+    color: gray;
+}
 .todoSections-Deadline,
 .todoSections-Status,
 .todoSections-Assigne{

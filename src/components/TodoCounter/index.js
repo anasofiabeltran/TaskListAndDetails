@@ -1,11 +1,13 @@
 import React from "react";
 import './TodoCounterCss.css'
 
-function TodoCounter(){ 
+function TodoCounter(props){ 
+    
     return(
         <div className="TodoCounter">
             <section className="TodoCounter-user">
-                <img />
+                
+                <img src={props.user}/>
                 <div className="TodoCounter-user-name">
                     Taslima Nasrim
                     <br />
@@ -13,7 +15,7 @@ function TodoCounter(){
                 </div>
             </section>
             <section className="TodoCounter-user-work">
-                has completado 2 de 3 TODOs
+                has completado '{props.numberTodosDone}' de {props.numberTodos} TODOs
             </section>
         </div>
     );
