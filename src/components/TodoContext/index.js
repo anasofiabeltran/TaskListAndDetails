@@ -1,6 +1,4 @@
-
 import {useLocalStorage} from '../customHooks/useLocalStorage'
-import { AppUI } from '../../AppUI'
 import React, {useState} from "react";
 
 const {Provider, Consumer} = React.createContext();
@@ -58,18 +56,22 @@ function TodoProvider (props){
     };
 
     return(
-        <>
-            <AppUI loading={loading}
-                    searchedTodos= {searchedTodos}
-                    completeTdos= {completeTdos}
-                    deleteTodos= {deleteTodos}
-                    todos= {todos}
-                    todosDone= {todosDone}
-                    todoSearch= {todoSearch}
-                    setTodoSearch= {setTodoSearch}
-                    user={user}/>
-        </>
+        
+            <Provider value={{
+              loading,
+              searchedTodos,
+              completeTdos,
+              deleteTodos,
+              todos,
+              todosDone,
+              todoSearch,
+              setTodoSearch,
+              user
+            }}>
+              {props.children}
+            </Provider>
+        
     );   
 }
 
-export {TodoProvider}
+export {TodoProvider,Consumer}
