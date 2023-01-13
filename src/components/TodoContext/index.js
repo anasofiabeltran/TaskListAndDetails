@@ -1,7 +1,8 @@
 import {useLocalStorage} from '../customHooks/useLocalStorage'
-import React, {useState} from "react";
+import React, {useState,useContext} from "react";
 
-const {Provider, Consumer} = React.createContext();
+const context = React.createContext();
+const useMyContext = () => useContext(context);
 function TodoProvider (props){
 
     const [user,setUser] = useState("");
@@ -57,7 +58,7 @@ function TodoProvider (props){
 
     return(
         
-            <Provider value={{
+            <context.Provider value={{
               loading,
               searchedTodos,
               completeTdos,
@@ -69,9 +70,9 @@ function TodoProvider (props){
               user
             }}>
               {props.children}
-            </Provider>
+            </context.Provider>
         
     );   
 }
 
-export {TodoProvider,Consumer}
+export {TodoProvider,context,useMyContext}

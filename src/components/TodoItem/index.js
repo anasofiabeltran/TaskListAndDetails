@@ -2,9 +2,22 @@ import React, {useState } from 'react'
 import cuadrado from '../../assets/icons/cuadrado.png'
 import checkBox from '../../assets/icons/check.png'
 import eliminate from '../../assets/icons/cerrar.png'
+import {useMyContext} from '../TodoContext'
 import './TodoItemCss.css'
 
 function TodoItem(props) {
+
+  const {
+    loading,
+    searchedTodos,
+    completeTdos,
+    deleteTodos,
+    todos,
+    todosDone,
+    todoSearch,
+    setTodoSearch,
+    user
+  } = useMyContext();
 
   const [imgButton,setImgButton] = useState (cuadrado)
   const [completed, setCompleted] = useState(props.showTodo.completed)
@@ -13,11 +26,11 @@ function TodoItem(props) {
   const checkToDo = () =>{
     setImgButton(checkBox)
     setCompleted(true)
-    props.changeTodoCompleted(props.showTodo.id)
+    completeTdos(props.showTodo.id)
   }
   
 
-
+  
   return (
     <section className={`item ${  completed && `taskDone`}`}>
       <div>
@@ -41,7 +54,7 @@ function TodoItem(props) {
           <img src={props.showTodo.assignee} />
         </section>
         <section className='item-seccion'>
-          <button onClick={()=>props.actionToDeleteTodos(props.showTodo.id)}>
+          <button onClick={()=>deleteTodos(props.showTodo.id)}>
             <img src={eliminate} />
           </button>
         </section>

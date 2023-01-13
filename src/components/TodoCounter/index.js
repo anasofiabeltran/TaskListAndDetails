@@ -1,13 +1,23 @@
 import React from "react";
 import './TodoCounterCss.css'
-
+import {useMyContext} from '../TodoContext'
 function TodoCounter(props){ 
-    
+    const {
+        loading,
+        searchedTodos,
+        completeTdos,
+        deleteTodos,
+        todos,
+        todosDone,
+        todoSearch,
+        setTodoSearch,
+        user
+      } = useMyContext();
     return(
         <div className="TodoCounter">
             <section className="TodoCounter-user">
                 
-                <img src={props.user}/>
+                <img src={user}/>
                 <div className="TodoCounter-user-name">
                     Taslima Nasrim
                     <br />
@@ -15,7 +25,7 @@ function TodoCounter(props){
                 </div>
             </section>
             <section className="TodoCounter-user-work">
-                has completado '{props.numberTodosDone}' de {props.numberTodos} TODOs
+                has completado '{todosDone.length}' de '{todos.length}' TODOs
             </section>
         </div>
     );

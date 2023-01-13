@@ -4,7 +4,7 @@ import {TodoSearch} from './components/TodoSearch'
 import {TodoList} from './components/TodoList'
 import {TodoItem} from './components/TodoItem'
 import { NavigationBar } from './components/NavigationBar'
-import {TodoProvider,Consumer} from './components/TodoContext'
+import {TodoProvider,context} from './components/TodoContext'
 import React from "react";
 const AppUI = ()  =>{
     return (
@@ -14,7 +14,7 @@ const AppUI = ()  =>{
               <NavigationBar />
             </section>
             
-              <Consumer>
+              <context.Consumer>
                 {
                   ({
                     loading,
@@ -34,19 +34,19 @@ const AppUI = ()  =>{
                           {
                   
                             searchedTodos.map(todo => (
-                            <TodoItem showTodo={todo} changeTodoCompleted={completeTdos} actionToDeleteTodos={deleteTodos}/>
+                            <TodoItem showTodo={todo}/>
                           ))
                           }
                         </TodoList>
                       </section>
                       <section className='secundaryView'>
-                        <TodoCounter user={user} numberTodos={todos.length} numberTodosDone={todosDone}/>
-                        <TodoSearch valueTodoSearch={todoSearch} setValueTodoSearch={setTodoSearch}/>
+                        <TodoCounter />
+                        <TodoSearch />
                       </section>
                     </>
                   )
                 }
-              </Consumer>
+              </context.Consumer>
         </TodoProvider>
         
       );
