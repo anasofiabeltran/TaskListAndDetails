@@ -18,13 +18,18 @@ function useLocalStorage(nameLocalStorage,initialValue,deleteItem){
 
   useEffect(()=>{
     setTimeout(()=>{
-      if(!(JSON.parse(localStorage.getItem(nameLocalStorage)).length==0)){
-        setItem(JSON.parse(localStorage.getItem(nameLocalStorage)))
+      if(JSON.parse(localStorage.getItem(nameLocalStorage))==null){
+        addNewUser();
       }else{
-          if (Items.length<1 && !deleteItem){
-              addNewUser()
-            };
+        if(!(JSON.parse(localStorage.getItem(nameLocalStorage)).length==0)){
+          setItem(JSON.parse(localStorage.getItem(nameLocalStorage)))
+        }else{
+            if (Items.length<1 && !deleteItem){
+                addNewUser();
+              };
+        }
       }
+      
       setLoading(false)
     },1500);
     

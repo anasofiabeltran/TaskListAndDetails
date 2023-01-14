@@ -32,7 +32,9 @@ const AppUI = ()  =>{
                      <TodoList>
                         {loading && 'cargando...'}
                           {
-                  
+                            console.log(searchedTodos)
+                          }
+                          {
                             searchedTodos.map(todo => (
                             <TodoItem showTodo={todo}/>
                           ))
