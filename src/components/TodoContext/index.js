@@ -12,7 +12,7 @@ function TodoProvider (props){
     let searchedTodos=[]
   
   
-    
+    //
     const {
       Items: todos,
       setItem: setTodos,
@@ -56,6 +56,12 @@ function TodoProvider (props){
       setDeleteTodo(true)
     };
 
+    const addTodo = (nameLocalStorage,todo) =>{
+      localStorage.setItem(nameLocalStorage, JSON.stringify([...todos,todo]))
+    }
+
+    const [openModal, setOpenModal] = useState(false)
+
     return(
         
             <context.Provider value={{
@@ -67,7 +73,10 @@ function TodoProvider (props){
               todosDone,
               todoSearch,
               setTodoSearch,
-              user
+              user,
+              addTodo,
+              openModal,
+              setOpenModal,
             }}>
               {props.children}
             </context.Provider>

@@ -1,0 +1,27 @@
+.TodoForm{
+    position: relative;
+    display: flex;
+    width: 194px;
+    height: 100px;
+    align-items: center;
+    top: 50%;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    left: 46vw;
+}
+
+.TodoForm article:first-child{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.TodoForm article:nth-child(2){
+    width: 154px;
+}
+
+.TodoForm article button{
+    margin: 6%;
+}
