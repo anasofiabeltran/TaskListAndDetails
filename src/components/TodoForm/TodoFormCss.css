@@ -1,15 +1,15 @@
 .TodoForm{
     position: relative;
     display: flex;
-    width: 194px;
-    height: 100px;
+    width: 720px;
+    height: 212px;
     align-items: center;
-    top: 50%;
+    top: 37%;
     flex-direction: column;
     gap: 10px;
     border: 1px solid gray;
     border-radius: 10px;
-    left: 46vw;
+    left: 29vw;
 }
 
 .TodoForm article:first-child{
@@ -18,10 +18,14 @@
     gap: 10px;
 }
 
-.TodoForm article:nth-child(2){
+.TodoForm article:nth-child(4){
     width: 154px;
 }
 
 .TodoForm article button{
     margin: 6%;
+}
+
+.TodoForm-img-users{
+    margin: 10px;
 }

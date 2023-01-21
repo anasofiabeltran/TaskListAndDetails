@@ -5,51 +5,58 @@ import {TodoList} from './components/TodoList'
 import {TodoItem} from './components/TodoItem'
 import { NavigationBar } from './components/NavigationBar'
 import {TodoProvider,context} from './components/TodoContext'
-import React from "react";
+import {useMyContext} from './components/TodoContext'
+import React,{useEffect} from "react";
 const AppUI = ()  =>{
-    return (
-        <TodoProvider>
+  const {
+    loading,
+    searchedTodos,
+    completeTdos,
+    deleteTodos,
+    todos,
+    todosDone,
+    todoSearch,
+    setTodoSearch,
+    user,
+    users,
+    setUsers,
+  }= useMyContext();
+
+  useEffect(()=>{
+    let newUsers = []
+    for (let i=0; i<10; i++){
+        fetch("https://randomuser.me/api/")
+        .then(res => res.json())
+        .then(info => {
+        const newUser = info.results[0].picture.thumbnail
+        newUsers.push(newUser)
         
+    })
+    setUsers(newUsers)
+    }
+    
+},[])
+
+    return (
+        <>
             <section className='navView'>
               <NavigationBar />
             </section>
-            
-              <context.Consumer>
+            <section className='principalView'>
+            <TodoList>
+              {loading && 'cargando...'}
                 {
-                  ({
-                    loading,
-                    searchedTodos,
-                    completeTdos,
-                    deleteTodos,
-                    todos,
-                    todosDone,
-                    todoSearch,
-                    setTodoSearch,
-                    user
-                  })=>(
-                    <>
-                    <section className='principalView'>
-                     <TodoList>
-                        {loading && 'cargando...'}
-                          {
-                            console.log(searchedTodos)
-                          }
-                          {
-                            searchedTodos.map(todo => (
-                            <TodoItem showTodo={todo}/>
-                          ))
-                          }
-                        </TodoList>
-                      </section>
-                      <section className='secundaryView'>
-                        <TodoCounter />
-                        <TodoSearch />
-                      </section>
-                    </>
-                  )
+                  searchedTodos.map(todo => (
+                  <TodoItem showTodo={todo}/>
+                ))
                 }
-              </context.Consumer>
-        </TodoProvider>
+              </TodoList>
+            </section>
+            <section className='secundaryView'>
+              <TodoCounter />
+              <TodoSearch />
+            </section>
+        </>
         
       );
 }

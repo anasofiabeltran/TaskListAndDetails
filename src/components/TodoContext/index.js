@@ -63,6 +63,8 @@ function TodoProvider (props){
 
     const [openModal, setOpenModal] = useState(false)
 
+    const [users, setUsers] = useState([])
+
     return(
         
             <context.Provider value={{
@@ -78,6 +80,8 @@ function TodoProvider (props){
               addTodo,
               openModal,
               setOpenModal,
+              users,
+              setUsers,
             }}>
               {props.children}
             </context.Provider>
