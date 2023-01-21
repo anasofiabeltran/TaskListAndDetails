@@ -54,7 +54,7 @@ function TodoItem(props) {
           <img src={props.showTodo.assignee} />
         </section>
         <section className='item-seccion'>
-          <button onClick={()=>deleteTodos(props.showTodo.id)}>
+          <button onClick={()=>deleteTodos(props.showTodo.id,'TODOS_V1')}>
             <img src={eliminate} />
           </button>
         </section>

@@ -50,9 +50,10 @@ function TodoProvider (props){
       setTodosDone(todosDone+1)
     };
     
-    const deleteTodos = (id) =>{
+    const deleteTodos = (id,nameLocalStorage) =>{
       const newTodos = todos.filter(todo => !(todo.id == id));
       setTodos(newTodos)
+      localStorage.setItem(nameLocalStorage, JSON.stringify(newTodos))
       setDeleteTodo(true)
     };
 
