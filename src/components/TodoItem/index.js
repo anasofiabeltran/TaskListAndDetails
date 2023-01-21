@@ -26,7 +26,7 @@ function TodoItem(props) {
   const checkToDo = () =>{
     setImgButton(checkBox)
     setCompleted(true)
-    completeTdos(props.showTodo.id)
+    completeTdos(props.showTodo.id,'TODOS_V1')
   }
   
 

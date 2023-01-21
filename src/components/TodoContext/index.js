@@ -1,5 +1,5 @@
 import {useLocalStorage} from '../customHooks/useLocalStorage'
-import React, {useState,useContext} from "react";
+import React, {useState,useContext, useEffect} from "react";
 
 const context = React.createContext();
 const useMyContext = () => useContext(context);
@@ -7,7 +7,7 @@ function TodoProvider (props){
 
     const [user,setUser] = useState("");
     const [todoSearch, setTodoSearch] = useState('')
-    const [todosDone, setTodosDone]= useState(0)
+    
     const [deleteTodo, setDeleteTodo] = useState(false)
     let searchedTodos=[]
   
@@ -20,8 +20,8 @@ function TodoProvider (props){
       error
     } =useLocalStorage('TODOS_V1',[],deleteTodo)
     
-  
-  
+    const [todosDone, setTodosDone]= useState([])
+    
     if (todoSearch.length <1){
       searchedTodos=todos;
     }else{
@@ -42,12 +42,14 @@ function TodoProvider (props){
       } )
     };
   
-    const completeTdos = (id) =>{
+    const completeTdos = (id,nameLocalStorage) =>{
       const todoIndex = todos.findIndex(todo => todo.id == id);
       const newTodos = [...todos];
       newTodos[todoIndex].completed= true;
       setTodos(newTodos)
-      setTodosDone(todosDone+1)
+      const numberTodosDone = todos.find(todo => todo.completed == true);
+      setTodosDone(numberTodosDone)
+      localStorage.setItem(nameLocalStorage, JSON.stringify(newTodos))
     };
     
     const deleteTodos = (id,nameLocalStorage) =>{
@@ -64,6 +66,10 @@ function TodoProvider (props){
     const [openModal, setOpenModal] = useState(false)
 
     const [users, setUsers] = useState([])
+
+    useEffect(()=>{
+      setTodosDone(todos.filter(todo => todo.completed == true))
+    },[loading])
 
     return(
         
