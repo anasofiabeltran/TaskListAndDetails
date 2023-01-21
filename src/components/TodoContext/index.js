@@ -46,16 +46,18 @@ function TodoProvider (props){
       const todoIndex = todos.findIndex(todo => todo.id == id);
       const newTodos = [...todos];
       newTodos[todoIndex].completed= true;
-      setTodos(newTodos)
-      const numberTodosDone = todos.find(todo => todo.completed == true);
-      setTodosDone(numberTodosDone)
       localStorage.setItem(nameLocalStorage, JSON.stringify(newTodos))
+      setTodos(newTodos)
+      
     };
     
     const deleteTodos = (id,nameLocalStorage) =>{
-      const newTodos = todos.filter(todo => !(todo.id == id));
-      setTodos(newTodos)
+      const todoIndex = todos.findIndex(todo => (todo.id == id));
+      const newTodos = [...todos];
+      newTodos.splice(todoIndex,1);
       localStorage.setItem(nameLocalStorage, JSON.stringify(newTodos))
+      setTodos(newTodos)
+      
       setDeleteTodo(true)
     };
 
@@ -69,7 +71,7 @@ function TodoProvider (props){
 
     useEffect(()=>{
       setTodosDone(todos.filter(todo => todo.completed == true))
-    },[loading])
+    },[loading,todos])
 
     return(
         

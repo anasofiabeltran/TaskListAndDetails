@@ -20,23 +20,22 @@ function TodoItem(props) {
   } = useMyContext();
 
   const [imgButton,setImgButton] = useState (cuadrado)
-  const [completed, setCompleted] = useState(props.showTodo.completed)
   
 
   const checkToDo = () =>{
     setImgButton(checkBox)
-    setCompleted(true)
+    console.log(props.showTodo.id)
     completeTdos(props.showTodo.id,'TODOS_V1')
   }
   
 
   
   return (
-    <section className={`item ${  completed && `taskDone`}`}>
+    <section className={`item ${  props.showTodo.completed && `taskDone`}`}>
       <div>
         <section >
           <button >
-            <img src={imgButton} onClick={checkToDo}/>
+            {!props.showTodo.completed && (<img src={imgButton} onClick={checkToDo}/>)}
           </button>
         </section>
         <section >
