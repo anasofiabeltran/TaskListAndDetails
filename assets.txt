@@ -3,3 +3,4 @@
 <a href="https://www.flaticon.es/iconos-gratis/crear" title="crear iconos">Crear iconos creados por zky.icon - Flaticon</a>
 <a href="https://www.flaticon.es/iconos-gratis/cerca" title="cerca iconos">Cerca iconos creados por adrianadam - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/check-box" title="check box icons">Check box icons created by alfanz - Flaticon</a>
+<a href="https://www.flaticon.es/iconos-gratis/lapiz" title="lápiz iconos">Lápiz iconos creados por Rendra Tri - Flaticon</a>

@@ -34,11 +34,9 @@ function TodoItem(props) {
     <section className={`item ${  props.showTodo.completed && `taskDone`}`}>
       <div>
         <section >
-          <button >
+        <button >
             {!props.showTodo.completed && (<img src={imgButton} onClick={checkToDo}/>)}
           </button>
-        </section>
-        <section >
           {props.showTodo.taskName}
         </section>
       </div>
@@ -51,8 +49,6 @@ function TodoItem(props) {
         </section>
         <section className='item-seccion'>
           <img src={props.showTodo.assignee} />
-        </section>
-        <section className='item-seccion'>
           <button onClick={()=>deleteTodos(props.showTodo.id,'TODOS_V1')}>
             <img src={eliminate} />
           </button>

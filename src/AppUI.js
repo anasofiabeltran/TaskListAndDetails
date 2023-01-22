@@ -7,6 +7,9 @@ import { NavigationBar } from './components/NavigationBar'
 import {TodoProvider,context} from './components/TodoContext'
 import {useMyContext} from './components/TodoContext'
 import React,{useEffect} from "react";
+
+import { Spinner } from 'reactstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
 const AppUI = ()  =>{
   const {
     loading,
@@ -44,7 +47,7 @@ const AppUI = ()  =>{
             </section>
             <section className='principalView'>
             <TodoList>
-              {loading && 'cargando...'}
+              {loading && (<Spinner />)}
                 {
                   searchedTodos.map(todo => (
                   <TodoItem showTodo={todo}/>

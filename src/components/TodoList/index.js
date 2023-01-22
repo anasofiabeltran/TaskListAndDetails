@@ -5,14 +5,19 @@ import './TodoListcss.css'
 function TodoList(props) {
   return (
     <div className='TodoList'>
-        <section>
-            Marketing
+        <section className='TodoList-menu'>
+            <b className='TodoList-menu-tittle'>Marketing</b>
+            <button>Edit</button>
+            <button>Duplicate</button>
+            <button>Change Status</button>
+            <button>Archive</button>
         </section>
-        <section>
-            Task List
+        <section className='TodoList-options'>
+            <a>Task List</a>
+            <a>Performance</a>
         </section>
         <section className='TodoList-newTask'>
-            <h4>Tasks</h4>
+            <b>Tasks</b>
             <CreateTodoButton />
         </section>
         

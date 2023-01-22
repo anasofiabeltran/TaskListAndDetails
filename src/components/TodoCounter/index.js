@@ -19,9 +19,8 @@ function TodoCounter(props){
                 
                 <img src={user}/>
                 <div className="TodoCounter-user-name">
-                    Taslima Nasrim
-                    <br />
-                    Human Resoure Manager
+                    <p>Taslima Nasrim</p>
+                   <span className=" text">Human Resoure Manager</span> 
                 </div>
             </section>
             <section className="TodoCounter-user-work">

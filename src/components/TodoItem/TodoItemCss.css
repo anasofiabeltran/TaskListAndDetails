@@ -5,7 +5,7 @@
 .item >div{
     display: flex;
     gap: 2px;
-    flex-grow: 3;
+    flex-grow: 6;
 }
 
 .taskDone{

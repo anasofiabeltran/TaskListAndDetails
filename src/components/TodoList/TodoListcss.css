@@ -2,6 +2,10 @@
     padding: 48px 24px 38px 48px;
 }
 
+.TodoList section{
+    margin: 1.5vh;
+}
+
 
 .TodoList-newTask{
     display: flex;
@@ -21,4 +25,30 @@
 .todoSections-Assigne{
     flex-grow: 1;
     color: gray;
+}
+
+
+.TodoList-menu,.TodoList-options{
+    display: flex;
+    gap: 20px;
+}
+.TodoList-menu-tittle{
+    font-size: 20px;
+}
+
+
+.TodoList-menu button:hover{
+    padding: 4px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background: var(--white);
+}
+
+.TodoList-menu button:hover::before{
+    content: url("../../assets/icons/lapices.png");
+}
+
+.TodoList-options a:hover{
+    color: red !important;
+    text-decoration: underline red !important;
 }

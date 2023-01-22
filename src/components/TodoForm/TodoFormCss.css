@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     width: 720px;
-    height: 212px;
+    height: 254px;
     align-items: center;
     top: 37%;
     flex-direction: column;
@@ -28,4 +28,8 @@
 
 .TodoForm-img-users{
     margin: 10px;
+}
+
+.TodoForm-img-users:hover {
+    border: 8px solid var(--gray);
 }

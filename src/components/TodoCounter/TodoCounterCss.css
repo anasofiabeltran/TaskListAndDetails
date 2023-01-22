@@ -1,21 +1,32 @@
 .TodoCounter{
-    background-color: blueviolet;
+    padding: 4%;
+    background-color: var(--dark-purple);
     width: 94%;
-    border: blueviolet solid 8px;
+    border: transparent solid 1px;
     border-radius: 10px;
     margin-bottom: 22px;
 }
 
 .TodoCounter-user-name{
     display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.TodoCounter-user-name p{
+    margin: 0;
 }
 
 .TodoCounter-user{
     display: flex;
     gap: 2px;
-    color: white;
+    color: var(--white);
 }
 
 .TodoCounter-user img{
     border-radius: 100%;
+}
+
+.TodoCounter-user-work{
+    color: var(--white);
 }
