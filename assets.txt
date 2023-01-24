@@ -4,3 +4,11 @@
 <a href="https://www.flaticon.es/iconos-gratis/cerca" title="cerca iconos">Cerca iconos creados por adrianadam - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/check-box" title="check box icons">Check box icons created by alfanz - Flaticon</a>
 <a href="https://www.flaticon.es/iconos-gratis/lapiz" title="lápiz iconos">Lápiz iconos creados por Rendra Tri - Flaticon</a>
+<div> Iconos diseñados por <a href="https://www.flaticon.es/autores/freepik" title="Freepik"> Freepik </a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es'</a></div>
+<a href="https://www.flaticon.es/iconos-gratis/reloj" title="reloj iconos">Reloj iconos creados por Kiranshastry - Flaticon</a>
+<a href="https://www.flaticon.es/iconos-gratis/mensaje" title="mensaje iconos">Mensaje iconos creados por Those Icons - Flaticon</a>
+
+<a href="https://www.flaticon.es/iconos-gratis/correo-electronico" title="correo electrónico iconos">Correo electrónico iconos creados por Freepik - Flaticon</a>
+<a href="https://www.flaticon.es/iconos-gratis/medalla" title="medalla iconos">Medalla iconos creados por Kiranshastry - Flaticon</a>
+<a href="https://www.flaticon.es/iconos-gratis/mecanico" title="mecánico iconos">Mecánico iconos creados por Good Ware - Flaticon</a>
+<a href="https://www.flaticon.es/iconos-gratis/bandera" title="bandera iconos">Bandera iconos creados por Fajrul Fitrianto - Flaticon</a>

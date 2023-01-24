@@ -1,0 +1,25 @@
+.NavigationBar{
+    
+    margin-top: 4rem;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(9, 1fr);
+    gap: 6px;
+    text-align: center;
+}
+
+.NavigationBar section{
+    grid-row: 3 / 9;
+    display: grid;
+    gap: 40px;
+    justify-content: center;
+}
+
+.zoom{
+    width: 28px;
+}
+
+.NavigationBar h4{
+    color: white;
+}

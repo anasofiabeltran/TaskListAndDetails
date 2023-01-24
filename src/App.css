@@ -1,6 +1,9 @@
 .navView{
     flex-grow: 1;
     background-color: var(--dark-purple);
+    border: 1px solid transparent;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .principalView{
